@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
@@ -15,7 +16,7 @@ namespace WebApiDemo.Models
             if (actionContext.Request.RequestUri.Scheme!=Uri.UriSchemeHttps)
             {
                 actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Found);
-                actionContext.Response.Content = new StringContent("<p>Use HTTPS instead of Http");
+                actionContext.Response.Content = new StringContent("<p>Use HTTPS instead of Http</p>", Encoding.UTF8, "text/html");
 
                 UriBuilder uriBuilder = new UriBuilder(actionContext.Request.RequestUri);
                 uriBuilder.Scheme = Uri.UriSchemeHttps;

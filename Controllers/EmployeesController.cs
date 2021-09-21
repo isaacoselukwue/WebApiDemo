@@ -5,9 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EmployeeDataAccess;
+using WebApiDemo.Models;
 
 namespace WebApiDemo.Controllers
 {
+    [RequireHttps]
     public class EmployeesController : ApiController
     {
         [HttpGet]
