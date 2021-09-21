@@ -5,27 +5,27 @@
     <title></title>
     <script src="Scripts/jquery-3.4.1.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            var ulEmployees = $('#ulEmployees');
+        //$(document).ready(function () {
+        //    var ulEmployees = $('#ulEmployees');
 
-            $('#btn').click(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: 'api/Employees',
-                    dataType: 'json',
-                    success: function (data) {
-                        ulEmployees.empty();
-                        $.each(data, function (index, val) {
-                            var fullName = val.Name;
-                            $('#ulEmployees').append('<li>' + fullName + '</li>')
-                        });
-                    }
-                });
-            });
-            $('btnClear').click(function () {
-                ulEmployees.empty();
-            });
-        });
+        //    $('#btn').click(function () {
+        //        $.ajax({
+        //            type: 'GET',
+        //            url: 'api/Employees/',
+        //            dataType: 'json',
+        //            success: function (data) {
+        //                ulEmployees.empty();
+        //                $.each(data, function (index, val) {
+        //                    var fullName = val.Name;
+        //                    $('#ulEmployees').append('<li>' + fullName + '</li>')
+        //                });
+        //            }
+        //        });
+        //    });
+        //    $('btnClear').click(function () {
+        //        ulEmployees.empty();
+        //    });
+        //});
     </script>
 </head>
 <body>

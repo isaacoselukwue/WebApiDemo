@@ -18,7 +18,8 @@ namespace WebApiDemo.Controllers
                 return entities.Employees.ToList();
             }
         }
-        public HttpResponseMessage Get(string gender ="All")
+        [Route(Name ="api/employee/bygender")]
+        public HttpResponseMessage GetByGender(string gender ="All")
         {
             using (EmployeeDBEntities entities = new EmployeeDBEntities())
             {

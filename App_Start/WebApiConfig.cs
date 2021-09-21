@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using WebApiDemo.Models;
 
 namespace WebApiDemo
 {
@@ -34,6 +35,9 @@ namespace WebApiDemo
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Filters.Add(new RequireHttpsAttribute());
+
             //config.Formatters.Add(new CustomJsonFommatter());
             //config.Formatters.Remove(config.Formatters.XmlFormatter);
             //config.Formatters.Remove(config.Formatters.JsonFormatter);
